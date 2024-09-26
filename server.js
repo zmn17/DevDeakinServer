@@ -1,6 +1,7 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 // load enviroment variables
 dotenv.config();
@@ -10,6 +11,7 @@ const PORT = 3000;
 
 // middleware to parse incoming JSON data
 app.use(express.json());
+app.use(cors());
 
 // Nodemailer transporter setup
 const transporter = nodemailer.createTransport({
